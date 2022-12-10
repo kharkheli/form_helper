@@ -17,6 +17,7 @@ export const Container = styled.div`
     border: none;
     background: red;
     outline: none;
+    border-radius: 4px;
   }
 `;
 
@@ -35,4 +36,34 @@ export const SingleOption = styled.div`
   padding: 8px 10px;
   box-sizing: border-box;
   color: white;
+`;
+
+export const Indicator = styled.i`
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  color: ${(props) => (props.focused ? "#333" : "#ccc")};
+  padding: 8px;
+  font-size: 20px;
+  &::before {
+    position: absolute;
+    content: "";
+    display: ${(props) => (props.separator === false ? "none" : "block")};
+    width: 1px;
+    height: 50%;
+    top: 20%;
+    left: 2px;
+    background: #ccc;
+  }
+`;
+
+export const LoadingContainer = styled.div`
+  width: fit-content;
+  position: absolute;
+  right: 40px;
+  top: 0px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
